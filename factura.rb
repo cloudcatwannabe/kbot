@@ -4,5 +4,11 @@
 # Debe poder ejecutarse con la línea de comando:
 # rgemuby factura.rb <cantidad> <precio unitario> <estado>
 
+class Facturacion
+  def calculate_price
+    '$0'
+  end
+end
 
-puts "Hola, mundo"
+factura = Facturacion.new
+puts factura.calculate_price
