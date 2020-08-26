@@ -6,7 +6,8 @@
 
 class Billing
   def calculate_price(quantity, price)
-    puts "Sub Total: 0"
+    subtotal = quantity.to_i * price.to_f
+    puts "Sub Total: $#{subtotal}"
     puts "Tax: 0"
     puts "Discount: 0"
     puts "Total: 0"
