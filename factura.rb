@@ -16,7 +16,23 @@ class Billing
   end
 
   def calculate_discount(subtotal)
-    subtotal * 0.03
+    discount = 0
+    case subtotal
+      when 0 .. 999
+        discount = 0.0
+      when 1000 .. 4999
+        discount = 0.03
+      when 5000 .. 6999
+        discount = 0.05
+      when 7000 .. 9999
+        discount = 0.07
+      when 10000 .. 49999
+        discount = 0.1
+      else
+        discount = 0.15
+    end
+
+    subtotal * discount
   end
   def calculate_price(quantity, price, state)
     subtotal = quantity.to_i * price.to_f
