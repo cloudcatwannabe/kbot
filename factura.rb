@@ -15,14 +15,18 @@ class Billing
     }
   end
 
+  def calculate_discount(subtotal)
+    subtotal * 0.03
+  end
   def calculate_price(quantity, price, state)
     subtotal = quantity.to_i * price.to_f
     tax_rate = @taxes[state.upcase]
     tax = subtotal * tax_rate
+    discount = calculate_discount(subtotal)
     total = subtotal + tax
     puts "Sub Total: $#{subtotal}"
     puts "Tax: $#{tax}"
-    puts 'Discount: $0'
+    puts "Discount: $#{discount}"
     puts "Total: $#{total}"
   end
 end
