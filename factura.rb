@@ -4,11 +4,14 @@
 # Debe poder ejecutarse con la línea de comando:
 # rgemuby factura.rb <cantidad> <precio unitario> <estado>
 
-class Facturacion
-  def calculate_price
-    '$0'
+class Billing
+  def calculate_price(quantity, price)
+    puts "Sub Total: 0"
+    puts "Tax: 0"
+    puts "Discount: 0"
+    puts "Total: 0"
   end
 end
 
-factura = Facturacion.new
-puts factura.calculate_price
+bill = Billing.new
+puts bill.calculate_price(ARGV[0], ARGV[1])
